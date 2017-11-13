@@ -1,1 +1,2 @@
 # filetool
+主要使用springboot微服务框架，netty网络框架，elsaticsearch服务器实现文件共享分析在线存储等功能。
