@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.UUID;
 
 import static tianjian.filesearch.server.config.ConstantValue.COUNTING;
@@ -29,14 +28,24 @@ public class ActionInterceptor implements HandlerInterceptor {
         StringRedisTemplate stringRedisTemplate = BeanUtils.getBean("stringRedisTemplate");
         // System.out.println(">>>MyInterceptor1>>>>>>>在请求处理之前进行调用（Controller方法调用之前）");
 
+       clearToken(stringRedisTemplate, 10000);
+
         // 获取系统时间
         String token = UUID.randomUUID().toString();
         Calendar ca = Calendar.getInstance();
         request.setAttribute("ClientId", token);
         System.out.println("start is " + token);
         int hour = ca.get(Calendar.HOUR_OF_DAY);
-        stringRedisTemplate.opsForZSet().add(COUNTING, token, new Date().getTime());
-        System.out.println("filter now hour is" + hour);
+
+        long size = stringRedisTemplate.opsForZSet().size(COUNTING);
+
+        if(size < 100) {
+          stringRedisTemplate.opsForZSet().add(COUNTING, token, System.currentTimeMillis());
+          System.out.println("filter now hour is" + hour);
+        } else {
+          System.out.println("你被拒绝了，请稍候再试!");
+          return false;
+        }
         return true;
     }
 
@@ -58,9 +67,7 @@ public class ActionInterceptor implements HandlerInterceptor {
         // 渲染了对应的视图之后执行（主要是用于进行资源清理工作）");
     }
 
-    private void initToken(StringRedisTemplate stringRedisTemplate, long outTime) {
-
-        stringRedisTemplate.opsForZSet().removeRange(COUNTING, 0, new Date().getTime() - outTime);
-
+    private void clearToken(StringRedisTemplate stringRedisTemplate, long outTime) {
+        stringRedisTemplate.opsForZSet().removeRange(COUNTING, 0, System.currentTimeMillis() - outTime);
     }
 }
