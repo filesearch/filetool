@@ -17,7 +17,6 @@ public class InitFileMessageService extends MessageService {
 
     @Override
     public ResponseMessage dealMessage(RequestMessage requestMessage) {
-        System.out.println(requestMessage.getCode());
         ResponseMessage responseMessage = new ResponseMessage();
         responseMessage.setCode(requestMessage.getCode());
         responseMessage.setTime(new Date());
