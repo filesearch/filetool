@@ -4,8 +4,10 @@ import org.junit.Test;
 import tianjian.filesearch.server.service.MessageService;
 import tianjian.filesearch.server.service.impl.DealMessageProxy;
 import tianjian.filesearch.server.service.impl.InitFileMessageService;
+import file.util.HttpClientUtil;
 
 import java.util.Date;
+import java.util.UUID;
 
 
 /**
@@ -35,6 +37,18 @@ public class CommonTest {
         requestMessage.setTime(new Date());
         System.out.println(JSON.toJSONString(ctx.dealMessage(requestMessage)));
     }
+
+    @Test
+    public void getClientTest() {
+        for(int i = 0 ; i < 1000; i++) {
+            String token = UUID.randomUUID().toString();
+            HttpClientUtil.httpGet(token);
+        }
+
+    }
+
+
+
 
 
 }
