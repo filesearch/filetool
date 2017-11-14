@@ -1,6 +1,5 @@
 package tianjian.filesearch.server.rest;
 
-import com.alibaba.fastjson.JSON;
 import file.model.message.RequestMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.*;
@@ -8,10 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import tianjian.filesearch.server.service.DealMessage;
-
-import java.util.*;
-
-import static tianjian.filesearch.server.config.ConstantValue.COUNTING;
 
 
 @RestController
@@ -30,6 +25,8 @@ public class FileRestController {
     requestMessage.setCode("10002");
     requestMessage.setMessage("hahah");
     dealMessage.dealMessage(requestMessage);
-    return JSON.toJSONString(dealMessage.dealMessage(requestMessage));
+    System.out.println("===========================ok===========================");
+    throw new Exception("test");
+    //return JSON.toJSONString(dealMessage.dealMessage(requestMessage));
   }
 }
