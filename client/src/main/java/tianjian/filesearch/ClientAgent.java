@@ -10,7 +10,8 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tianjian.filesearch.client.User;
-import tianjian.filesearch.client.service.UploadFileService;
+import tianjian.filesearch.client.service.ClientSendMessage;
+import tianjian.filesearch.client.service.impl.UploadFileServiceImpl;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -39,12 +40,16 @@ public class ClientAgent {
     User user;
 
     @Autowired
-    UploadFileService uploadFileService;
+    UploadFileServiceImpl uploadFileService;
+
+    @Autowired
+    ClientSendMessage clientSendMessage;
 
     @RequestMapping("haha")
     String home() throws IOException, ParseException {
         user.test();
-        uploadFileService.watchAndScanFile();
+//        uploadFileService.watchAndScanFile();
+        clientSendMessage.clientSendMessage("test");
         return "Hello World!";
     }
 
