@@ -1,4 +1,4 @@
-package tianjian.filesearch.server.service;
+package tianjian.filesearch.server.service.sys;
 
 import file.model.message.RequestMessage;
 import file.model.message.ResponseMessage;

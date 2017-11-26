@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import tianjian.filesearch.server.model.RedisModel;
-import tianjian.filesearch.server.service.impl.RedisServiceImpl;
+import tianjian.filesearch.server.service.sys.impl.RedisServiceImpl;
 
 /**
  * @author <a href="mailto:Administrator@gtmap.cn">Administrator</a>

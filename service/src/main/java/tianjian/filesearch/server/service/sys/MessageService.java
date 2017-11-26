@@ -1,4 +1,4 @@
-package tianjian.filesearch.server.service;
+package tianjian.filesearch.server.service.sys;
 
 import file.model.message.RequestMessage;
 import file.model.message.ResponseMessage;
@@ -6,7 +6,7 @@ import file.model.message.ResponseMessage;
 /**
  * Created by tianjian on 2017/11/12.
  */
-public abstract class MessageService implements DealMessage{
+public abstract class MessageService implements DealMessage {
     private String code;
     private MessageService messageService;
     public ResponseMessage dealProxyMessage(RequestMessage requestMessage) throws Exception {

@@ -6,7 +6,7 @@ import org.springframework.data.redis.core.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import tianjian.filesearch.server.service.DealMessage;
+import tianjian.filesearch.server.service.sys.DealMessage;
 
 
 @RestController

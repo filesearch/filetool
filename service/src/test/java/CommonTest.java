@@ -1,9 +1,9 @@
 import com.alibaba.fastjson.JSON;
 import file.model.message.RequestMessage;
 import org.junit.Test;
-import tianjian.filesearch.server.service.MessageService;
-import tianjian.filesearch.server.service.impl.DealMessageProxy;
-import tianjian.filesearch.server.service.impl.InitFileMessageService;
+import tianjian.filesearch.server.service.sys.MessageService;
+import tianjian.filesearch.server.service.sys.impl.DealMessageProxy;
+import tianjian.filesearch.server.service.sys.impl.InitFileMessageService;
 import file.util.HttpClientUtil;
 
 import java.util.Date;

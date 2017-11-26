@@ -1,8 +1,8 @@
-package tianjian.filesearch.server.service.impl;
+package tianjian.filesearch.server.service.sys.impl;
 
 import org.springframework.stereotype.Service;
 import tianjian.filesearch.server.model.RedisModel;
-import tianjian.filesearch.server.service.IRedisService;
+import tianjian.filesearch.server.service.sys.IRedisService;
 
 /**
  * @author <a href="mailto:Administrator@gtmap.cn">Administrator</a>

@@ -1,9 +1,9 @@
-package tianjian.filesearch.server.service.impl;
+package tianjian.filesearch.server.service.sys.impl;
 
 import file.model.message.RequestMessage;
 import file.model.message.ResponseMessage;
-import tianjian.filesearch.server.service.DealMessage;
-import tianjian.filesearch.server.service.MessageService;
+import tianjian.filesearch.server.service.sys.DealMessage;
+import tianjian.filesearch.server.service.sys.MessageService;
 
 import java.util.ArrayList;
 import java.util.List;
