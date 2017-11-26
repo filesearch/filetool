@@ -29,4 +29,9 @@ public class FileRestController {
     throw new Exception("test");
     //return JSON.toJSONString(dealMessage.dealMessage(requestMessage));
   }
+
+  @RequestMapping(value = "/api", method = RequestMethod.GET)
+  public String testRestTmeplate() {
+    return "test";
+  }
 }

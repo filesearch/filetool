@@ -9,6 +9,11 @@ public class RequestMessage {
   private String code;
 
   /**
+   * 文件名称
+   */
+  private String fileName;
+
+  /**
    * 业务请求消息
    */
   private String message;
@@ -66,5 +71,13 @@ public class RequestMessage {
 
   public void setNode(String node) {
     this.node = node;
+  }
+
+  public String getFileName() {
+    return fileName;
+  }
+
+  public void setFileName(String fileName) {
+    this.fileName = fileName;
   }
 }

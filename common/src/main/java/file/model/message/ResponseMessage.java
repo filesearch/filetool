@@ -13,6 +13,8 @@ public class ResponseMessage {
    */
   private String data;
 
+  private boolean result;
+
   /**
    * 响应时间
    */
@@ -36,6 +38,14 @@ public class ResponseMessage {
 
   public Date getTime() {
     return time;
+  }
+
+  public boolean isResult() {
+    return result;
+  }
+
+  public void setResult(boolean result) {
+    this.result = result;
   }
 
   public void setTime(Date time) {
