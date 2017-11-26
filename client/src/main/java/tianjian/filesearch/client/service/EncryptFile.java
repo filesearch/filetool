@@ -1,9 +1,9 @@
 package tianjian.filesearch.client.service;
 
-import java.io.File;
 
 /**
  * Created by tianjian on 2017/11/25.
+ * 文件加密
  */
 public interface EncryptFile {
 

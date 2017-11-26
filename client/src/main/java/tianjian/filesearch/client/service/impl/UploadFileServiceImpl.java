@@ -16,7 +16,7 @@ import static file.util.FileUtil.saveFileToEs;
 /**
  * @author <a href="mailto:Administrator@gtmap.cn">Administrator</a>
  * @version 1.0, 2017/11/8
- * @description
+ * @description 这个是假对不是接口实现
  */
 @Component
 public class UploadFileServiceImpl {

@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/tianjian.filesearch.server.service.rest")
+@RequestMapping("/rest")
 public class FileRestController {
 
   @RequestMapping("/client")

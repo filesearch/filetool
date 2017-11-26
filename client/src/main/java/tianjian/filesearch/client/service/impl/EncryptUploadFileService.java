@@ -5,6 +5,7 @@ import tianjian.filesearch.client.service.UploadFileService;
 
 /**
  * Created by tianjian on 2017/11/25.
+ * 对文件进行加密上传装饰类
  */
 public class EncryptUploadFileService implements UploadFileService{
 
@@ -17,7 +18,7 @@ public class EncryptUploadFileService implements UploadFileService{
     }
 
     @Override
-    public String uploadFileService(byte[] file) {
+    public boolean uploadFileService(byte[] file) {
         return uploadFileService.uploadFileService(encryptFile.encryptFile(file));
     }
 
